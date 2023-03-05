@@ -1,0 +1,70 @@
+/* Styling for the record button */
+.record-btn {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    border-radius: 50%;
+    margin: 50px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+  .record-btn:hover {
+    background-color: darkred;
+  }
+  
+  /* Styling for the stop button */
+  .stop-btn {
+    width: 100px;
+    height: 100px;
+    background-color: gray;
+    border-radius: 50%;
+    margin: 50px auto;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+  .stop-btn:hover {
+    background-color: darkgray;
+  }
+  
+  /* Styling for the recording indicator */
+  .recording-indicator {
+    width: 10px;
+    height: 10px;
+    background-color: red;
+    border-radius: 50%;
+    margin-left: 10px;
+    display: none;
+  }
+  
+  /* Styling for the save button */
+  .save-btn {
+    width: 150px;
+    height: 50px;
+    background-color: green;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    display: none;
+    margin: 50px auto;
+  }
+  
+  .save-btn:hover {
+    background-color: darkgreen;
+  }
+  
+  /* Styling for the error message */
+  .error-msg {
+    color: red;
+    font-size: 18px;
+    margin: 20px auto;
+    display: none;
+  }
+  
