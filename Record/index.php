@@ -17,6 +17,7 @@
       background-color: #fff;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     }
+    
     h1 {
       font-size: 32px;
       margin-bottom: 20px;
