@@ -30,10 +30,83 @@ mysqli_close($link);
 	<link rel="stylesheet"
 		href="responsive.css">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 	<style>
 /* CSS */
- 
+#myChart1 {
+    height: 500px;
+    width: 500px;
+    margin: 0 auto;
+    background-color: #f4f4f4;
+    border-radius: 5px;
+    padding: 20px;
+}
+
+.chart-container {
+    position: relative;
+    margin: auto;
+    height: 80vh;
+    width: 70vw;
+}
+/* Center the chart within its container */
+#myChart {
+  display: block;
+  margin: 0 auto;
+}
+
+/* Style the legend */
+#myChart .chart-legend ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+#myChart .chart-legend li {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+#myChart .chart-legend li span {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin-right: 5px;
+  border-radius: 50%;
+}
+
+/* Style the tooltips */
+#myChart .chart-tooltip {
+  position: absolute;
+  z-index: 99;
+  padding: 5px;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 5px;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}
+
+#myChart .chart-tooltip:before {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 8px 8px 8px;
+  border-color: transparent transparent rgba(0, 0, 0, 0.7) transparent;
+}
+
+#myChart .chart-tooltip.hidden {
+  opacity: 0;
+}
+
 .message {
   display: flex;
   align-items: center;
@@ -454,6 +527,77 @@ window.onclick = function(event) {
                         <h2 class="topic">View details</h2>
                     </div>
 			</div>
+			<div>
+		<canvas id="myChart1"></canvas>
+	</div>
+	<script>
+		var ctx = document.getElementById('myChart1').getContext('2d');
+		var myChart = new Chart(ctx, {
+			type: 'bar',
+			data: {
+				labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+				datasets: [{
+					label: 'Daily Sales',
+					data: [100, 200, 150, 300, 250, 400, 350],
+					backgroundColor: 'rgba(54, 162, 235, 0.2)',
+					borderColor: 'rgba(54, 162, 235, 1)',
+					borderWidth: 1
+				}]
+			},
+			options: {
+				scales: {
+					yAxes: [{
+						ticks: {
+							beginAtZero: true
+						}
+					}]
+				}
+			}
+		});
+	</script>
+       <div>
+	<canvas id="myChart"></canvas>
+</div>
+<script>
+	var ctx = document.getElementById('myChart').getContext('2d');
+var myChart = new Chart(ctx, {
+	type: 'pie',
+	data: {
+		labels: ['Item A', 'Item B', 'Item C', 'Item D', 'Item E'],
+		datasets: [{
+			label: 'Most Bought Items',
+			data: [35, 20, 10, 15, 20],
+			backgroundColor: [
+				'rgba(255, 99, 132, 0.2)',
+				'rgba(54, 162, 235, 0.2)',
+				'rgba(255, 206, 86, 0.2)',
+				'rgba(75, 192, 192, 0.2)',
+				'rgba(153, 102, 255, 0.2)'
+			],
+			borderColor: [
+				'rgba(255, 99, 132, 1)',
+				'rgba(54, 162, 235, 1)',
+				'rgba(255, 206, 86, 1)',
+				'rgba(75, 192, 192, 1)',
+				'rgba(153, 102, 255, 1)'
+			],
+			borderWidth: 1
+		}]
+	},
+	options: {
+		responsive: true,
+		legend: {
+			position: 'right',
+			labels: {
+				fontColor: '#333',
+				fontSize: 12
+			}
+		}
+	}
+});
+
+</script>
+
 		</div>
 	</div>
 
