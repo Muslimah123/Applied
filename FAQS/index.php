@@ -1,112 +1,71 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>FAQs Page</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<style>
-		body {
-			font-family: Arial, Helvetica, sans-serif;
-			font-size: 16px;
-			line-height: 1.5;
-			background-color: #f5f5f5;
-			padding: 20px;
-		}
-
-		h1 {
-			font-size: 32px;
-			margin-bottom: 30px;
-			text-align: center;
-		}
-
-		.faq {
-			list-style: none;
-			padding: 0;
-			margin: 0;
-			max-width: 800px;
-			margin: 0 auto;
-			background-color: #fff;
-			box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-			border-radius: 5px;
-			overflow: hidden;
-		}
-
-		.question {
-			font-weight: bold;
-			cursor: pointer;
-			padding: 15px;
-			background-color: #f5f5f5;
-			border-bottom: 1px solid #ddd;
-		}
-
-		.question:hover {
-			background-color: #e1e1e1;
-		}
-
-		.answer {
-			display: none;
-			padding: 15px;
-			border-bottom: 1px solid #ddd;
-		}
-
-		.answer:last-child {
-			border-bottom: none;
-		}
-	</style>
+	<title>FAQ - Financial Management System</title>
+	<link rel="stylesheet" href="index.css">
 </head>
 <body>
 	<h1>Frequently Asked Questions</h1>
-	<ul class="faq">
-		<li>
-			<div class="question">What is Lorem Ipsum?</div>
-			<div class="answer">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</div>
-		</li>
-		<li>
-			<div class="question">Where can I get more information about Lorem Ipsum?</div>
-			<div class="answer">There are many resources online where you can learn more about Lorem Ipsum, including Wikipedia.</div>
-		</li>
-		<li>
-			<div class="question">Why do we use Lorem Ipsum?</div>
-			<div class="answer">Lorem Ipsum is used as a placeholder text in the design and printing industry.</div>
-		</li>
-        <li>
-			<div class="question">What is Lorem Ipsum?</div>
-			<div class="answer">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</div>
-		</li>
-		<li>
-			<div class="question">Where can I get more information about Lorem Ipsum?</div>
-			<div class="answer">There are many resources online where you can learn more about Lorem Ipsum, including Wikipedia.</div>
-		</li>
-		<li>
-			<div class="question">Why do we use Lorem Ipsum?</div>
-			<div class="answer">Lorem Ipsum is used as a placeholder text in the design and printing industry.</div>
-		</li>
-        <li>
-			<div class="question">What is Lorem Ipsum?</div>
-			<div class="answer">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</div>
-		</li>
-		<li>
-			<div class="question">Where can I get more information about Lorem Ipsum?</div>
-			<div class="answer">There are many resources online where you can learn more about Lorem Ipsum, including Wikipedia.</div>
-		</li>
-		<li>
-			<div class="question">Why do we use Lorem Ipsum?</div>
-			<div class="answer">Lorem Ipsum is used as a placeholder text in the design and printing industry.</div>
-		</li>
-		<!-- Add more questions and answers here -->
-	</ul>
-	
-	<script>
-		const questions = document.querySelectorAll('.question');
-		questions.forEach(function(question) {
-			question.addEventListener('click', function() {
-				const answer = question.nextElementSibling;
-				if (answer.style.display === 'block') {
-					answer.style.display = 'none';
-				} else {
-					answer.style.display = 'block';
-				}
-			});
-		});
-	</script>
+	<div class="accordion">
+		<div class="accordion-item">
+			<div class="accordion-item-header">What is the financial management system?</div>
+			<div class="accordion-item-body">
+				The financial management system is a voice-enabled platform that helps you manage your personal finances. You can track your expenses, monitor your investments, check your account balances, and view your transaction history using voice commands.
+			</div>
+		</div>
+		<div class="accordion-item">
+			<div class="accordion-item-header">How does the system work?</div>
+			<div class="accordion-item-body">
+				The system uses natural language processing (NLP) technology to interpret your voice commands. You can add expenses, income, investments, and check your account balances by speaking to the system. The system will then process your command and perform the requested action.
+			</div>
+		</div>
+		<div class="accordion-item">
+			<div class="accordion-item-header">What are the requirements to use the system?</div>
+			<div class="accordion-item-body">
+				You need to have a linked bank account or credit card account to use the system. For investment tracking, you need to have a linked investment account. You also need a device that supports voice commands and an internet connection.
+			</div>
+		</div>
+		<div class="accordion-item">
+			<div class="accordion-item-header">Is my financial data secure?</div>
+			<div class="accordion-item-body">
+				Yes, your financial data is encrypted and stored securely on our servers. We use the latest security technology to protect your data and ensure that it is only accessible to you.
+			</div>
+		</div>
+		<div class="accordion-item">
+			<div class="accordion-item-header">What are the benefits of using a voice-enabled financial management system?</div>
+			<div class="accordion-item-body">
+			Using a voice-enabled financial management system can save you time and effort in managing your finances. You can easily add expenses and monitor your account balances without having to manually enter information. It also provides a more natural and intuitive user experience.
+			</div>
+		</div>
+		<div class="accordion-item">
+			<div class="accordion-item-header">Can I link multiple bank accounts to a voice-enabled financial management system?
+</div>
+			<div class="accordion-item-body">
+			Yes, you can link multiple bank accounts and credit cards to the system. This allows you to manage all your finances in one place.
+			</div>
+		</div>
+		<div class="accordion-item">
+			<div class="accordion-item-header">What happens if I lose my device that supports voice commands?
+</div>
+			<div class="accordion-item-body">
+			Your financial data is securely stored on our servers, so you can access it from any device with an internet connection. However, for security reasons, you should immediately notify us if your device is lost or stolen.
+			</div>
+		</div>
+		<div class="accordion-item">
+			<div class="accordion-item-header">Is there a limit to the number of voice commands I can use?
+</div>
+			<div class="accordion-item-body">
+			There is no limit to the number of voice commands you can use. You can use the system as much as you need to manage your finances.
+			</div>
+		</div>
+		<div class="accordion-item">
+			<div class="accordion-item-header">How can I contact support?</div>
+			<div class="accordion-item-body">
+				You can contact support by emailing support@financialmanagementsystem.com or by calling our toll-free number at 1-800-123-4567.
+			</div>
+		</div>
+		
+	</div>
+	<script src="index.js"></script>
 </body>
 </html>

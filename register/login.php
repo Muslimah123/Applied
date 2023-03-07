@@ -3,10 +3,7 @@
 session_start();
 
 # Check if user is already logged in, If yes then redirect him to record page
-if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] == TRUE) {
-  echo "<script>" . "window.location.href=' '" . "</script>";
-  exit;
-}
+
 
 # Include connection
 require_once "db.php";
@@ -61,7 +58,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
               $_SESSION["loggedin"] = TRUE;
 
               # Redirect user to index page
-              echo "<script>" . "window.location.href='../record/'" . "</script>";
+            /*   echo "<script>" . "window.location.href='../record/'" . "</script>"; */
+            echo "<script>" . "window.location.href='../record/'" . "</script>";
+
               exit;
             } else {
               # If password is incorrect show an error message
