@@ -2,9 +2,9 @@
 # Initialize session
 session_start();
 
-# Check if user is already logged in, If yes then redirect him to index page
+# Check if user is already logged in, If yes then redirect him to record page
 if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] == TRUE) {
-  echo "<script>" . "window.location.href='../record/'" . "</script>";
+  echo "<script>" . "window.location.href=' '" . "</script>";
   exit;
 }
 
@@ -137,7 +137,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <div class="mb-3">
               <input type="submit" class="btn btn-primary form-control" name="submit" value="Log In">
             </div>
-            <p class="mb-0">Don't have an account ? <a href="./register.php">Sign Up</a></p>
+            <p class="mb-0">Don't have an account ? <a href="register.php">Sign Up</a></p>
           </form>
           <!-- form ends here -->
         </div>

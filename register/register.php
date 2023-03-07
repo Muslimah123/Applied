@@ -107,13 +107,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       $param_password = password_hash($password, PASSWORD_DEFAULT);
 
       # Execute the prepared statement
-      if (mysqli_stmt_execute($stmt)) {
+   /*    if (mysqli_stmt_execute($stmt)) {
         echo "<script>" . "alert('Registeration completed successfully. Login to continue.');" . "</script>";
         echo "<script>" . "window.location.href='login.php';" . "</script>";
         exit;
       } else {
         echo "<script>" . "alert('Oops! Something went wrong. Please try again later.');" . "</script>";
-      }
+      } */
+      # Execute the prepared statement
+# Execute the prepared statement
+if (mysqli_stmt_execute($stmt)) {
+  echo "<script>" . "alert('Registration completed successfully. Login to continue.');" . "</script>";
+  echo "<script>" . "window.location.href='login.php';" . "</script>";
+  exit;
+} else {
+  echo "<script>" . "alert('Oops! Something went wrong. Please try again later.');" . "</script>";
+}
+
+
 
       # Close statement
       mysqli_stmt_close($stmt);
@@ -172,14 +183,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
               <small class="text-danger"><?= $password_err; ?></small>
             </div>
             <div class="mb-3 form-check">
-             <input type="checkbox" class="form-check-input" id="togglePassword">
-<label for="togglePassword" class="form-check-label">Show Password</label>
+             <!-- <input type="checkbox" class="form-check-input" id="togglePassword">
+<label for="togglePassword" class="form-check-label">Show Password</label> -->
+<!-- <input type="password" id="password"> -->
+<!-- <button onclick="togglePasswordVisibility()">Show/Hide Password</button> -->
+         <input type="button" value="Show/Hide password" onclick="togglePassword()">
+
+
 
             </div>
             <div class="mb-3">
               <input type="submit" class="btn btn-primary form-control" name="submit" value="Sign Up">
             </div>
-            <p class="mb-0">Already have an account ? <a href="./login.php">Log In</a></p>
+            <p class="mb-0">Already have an account ? <a href="login.php">Log In</a></p>
           </form>
           <!-- form ends here -->
         </div>
