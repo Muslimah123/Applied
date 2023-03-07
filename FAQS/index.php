@@ -61,7 +61,7 @@
 		<div class="accordion-item">
 			<div class="accordion-item-header">How can I contact support?</div>
 			<div class="accordion-item-body">
-				You can contact support by emailing support@financialmanagementsystem.com or by calling our toll-free number at 1-800-123-4567.
+				You can contact support by emailing support@financialmanagementsystem.com or by calling our toll-free number at 1-800-123-4567.Our team will assist you in resolving any issues you may have.
 			</div>
 		</div>
 		
