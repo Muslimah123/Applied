@@ -24,7 +24,7 @@ mysqli_close($link);
 	<meta name="viewport"
 		content="width=device-width,
 				initial-scale=1.0">
-	<title>Voice enabled FMS</title>
+	<title>Revenue Report</title>
 	<link rel="stylesheet"
 		href="index.css">
 	<link rel="stylesheet"
@@ -37,72 +37,7 @@ mysqli_close($link);
 
 	<style>
 /* CSS */
-#revenue-chart {
-  width: 100%;
-  height: 400px;
-  margin-bottom: 20px;
-}
 
-
-
-
-/* Center the chart within its container */
-#myChart {
-  display: block;
-  margin: 0 auto;
-}
-
-/* Style the legend */
-#myChart .chart-legend ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  text-align: center;
-}
-
-#myChart .chart-legend li {
-  display: inline-block;
-  margin-right: 10px;
-}
-
-#myChart .chart-legend li span {
-  display: inline-block;
-  width: 12px;
-  height: 12px;
-  margin-right: 5px;
-  border-radius: 50%;
-}
-
-/* Style the tooltips */
-#myChart .chart-tooltip {
-  position: absolute;
-  z-index: 99;
-  padding: 5px;
-  background-color: rgba(0, 0, 0, 0.7);
-  color: #fff;
-  font-size: 14px;
-  font-weight: bold;
-  border-radius: 5px;
-  pointer-events: none;
-  transition: opacity 0.3s;
-}
-
-#myChart .chart-tooltip:before {
-  content: '';
-  position: absolute;
-  bottom: -8px;
-  left: 50%;
-  transform: translateX(-50%) rotate(45deg);
-  width: 0;
-  height: 0;
-  border-style: solid;
-  border-width: 0 8px 8px 8px;
-  border-color: transparent transparent rgba(0, 0, 0, 0.7) transparent;
-}
-
-#myChart .chart-tooltip.hidden {
-  opacity: 0;
-}
 
 .message {
   display: flex;
@@ -482,186 +417,64 @@ window.onclick = function(event) {
 				</div>
 			</div>
 
-			<div class="box-container">
-
-      <div class="box box1" onclick="goToPage('revenue.php')">
-  <div class="text">
-    <i class="fas fa-dollar-sign icon"></i>
-    <h2 class="topic-heading">Revenue</h2>
-    <div class="summary-details-wrapper">
-      <p class="summary">Total revenue: $10,000</p>
-      <button class="details-btn">View details</button>
-    </div>
-  </div>
-</div>
-
-<div class="box box2" onclick="goToPage('expenses.php')">
-  <div class="text">
-    <i class="fas fa-money-bill-alt icon"></i>
-    <h2 class="topic-heading">Expenses</h2>
-    <div class="summary-details-wrapper">
-      <p class="summary">Total expenses: $5,000</p>
-      <button class="details-btn">View details</button>
-    </div>
-  </div>
-</div>
-
-<div class="box box3" onclick="goToPage('profit.php')">
-  <div class="text">
-    <i class="fas fa-chart-line icon"></i>
-    <h2 class="topic-heading">Profit</h2>
-    <div class="summary-details-wrapper">
-      <p class="summary">Total profit: $5,000</p>
-      <button class="details-btn">View details</button>
-    </div>
-  </div>
-</div>
-
-<div class="box box4" onclick="goToPage('sales.php')">
-  <div class="text">
-    <i class="fas fa-shopping-cart icon"></i>
-    <h2 class="topic-heading">Sales by Products</h2>
-    <div class="summary-details-wrapper">
-      <p class="summary">Top selling product: Product A</p>
-      <button class="details-btn">View details</button>
-    </div>
-  </div>
-</div>
-
-<div class="box box5" onclick="goToPage('expense.php')">
-  <div class="text">
-    <i class="fas fa-list-alt icon"></i>
-    <h2 class="topic-heading">Expense by category</h2>
-    <div class="summary-details-wrapper">
-      <p class="summary">Top expense category: Category A</p>
-      <button class="details-btn">View details</button>
-    </div>
-  </div>
-</div>
-
-<div class="box box6" onclick="goToPage('income-statement.php')">
-  <div class="text">
-    <i class="fas fa-file-alt icon"></i>
-    <h2 class="topic-heading">Report</h2>
-    <div class="summary-details-wrapper">
-      <p class="summary">View income statement</p>
-      <button class="details-btn">View details</button>
-    </div>
-  </div>
-</div>
-
-
-
-<script>
-    function goToPage(page) {
-  window.location.href = page;
-}
-
-  </script>
-			<div>
-      <canvas id="revenue-chart"></canvas>
-
-	</div>
-	<script>
-	// get the canvas element
-const canvas = document.getElementById("revenue-chart");
-
-// initialize the Chart object
-const revenueChart = new Chart(canvas, {
-  type: "line",
-  data: {
-    labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul"],
-    datasets: [
-      {
-        label: "Revenue",
-        data: [1000, 2000, 1500, 3000, 2500, 4000, 3500],
-        backgroundColor: "rgba(0, 119, 204, 0.1)",
-        borderColor: "rgba(0, 119, 204, 0.8)",
-        borderWidth: 2,
-        pointBackgroundColor: "rgba(0, 119, 204, 0.8)",
-        pointRadius: 5,
-        pointHoverRadius: 7
-      }
-    ]
-  },
-  options: {
-    responsive: true,
-    maintainAspectRatio: false,
-    legend: {
-      display: false
-    },
-    scales: {
-      xAxes: [{
-        gridLines: {
-          display: false
-        }
-      }],
-      yAxes: [{
-        ticks: {
-          beginAtZero: true,
-          callback: function(value, index, values) {
-            return "$" + value;
-          }
-        }
-      }]
-    },
-    tooltips: {
-      callbacks: {
-        label: function(tooltipItem, data) {
-          return "$" + tooltipItem.yLabel;
-        }
-      }
-    }
-  }
-});
-
-	</script>
-       <div>
-	<canvas id="myChart"></canvas>
-</div>
-<script>
-	var ctx = document.getElementById('myChart').getContext('2d');
-var myChart = new Chart(ctx, {
-	type: 'pie',
-	data: {
-		labels: ['Item A', 'Item B', 'Item C', 'Item D', 'Item E'],
-		datasets: [{
-			label: 'Most Bought Items',
-			data: [35, 20, 10, 15, 20],
-			backgroundColor: [
-				'rgba(255, 99, 132, 0.2)',
-				'rgba(54, 162, 235, 0.2)',
-				'rgba(255, 206, 86, 0.2)',
-				'rgba(75, 192, 192, 0.2)',
-				'rgba(153, 102, 255, 0.2)'
-			],
-			borderColor: [
-				'rgba(255, 99, 132, 1)',
-				'rgba(54, 162, 235, 1)',
-				'rgba(255, 206, 86, 1)',
-				'rgba(75, 192, 192, 1)',
-				'rgba(153, 102, 255, 1)'
-			],
-			borderWidth: 1
-		}]
-	},
-	options: {
-		responsive: true,
-		legend: {
-			position: 'right',
-			labels: {
-				fontColor: '#333',
-				fontSize: 12
-			}
-		}
-	}
-});
-
-</script>
+			
 
 		</div>
 	</div>
+    <div class="container">
+    <h1>Revenue Report</h1>
+    <div class="box">
+      <h2>Revenue Overview</h2>
+      <p>Total Revenue: $10,000</p>
+      <p>Number of Products Sold: 500</p>
+      <p>Average Revenue per Product: $20</p>
+    </div>
+    <div class="box">
+      <h2>Monthly Revenue</h2>
+      <canvas id="monthly-revenue-chart"></canvas>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script>
+    // get the canvas element
+    const canvas = document.getElementById("monthly-revenue-chart");
 
+    // initialize the Chart object
+    const monthlyRevenueChart = new Chart(canvas, {
+      type: "bar",
+      data: {
+        labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul"],
+        datasets: [
+          {
+            label: "Monthly Revenue",
+            data: [1000, 2000, 1500, 3000, 2500, 4000, 3500],
+            backgroundColor: "rgba(0, 119, 204, 0.8)"
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        scales: {
+          yAxes: [{
+            ticks: {
+              beginAtZero: true,
+              callback: function(value, index, values) {
+                return "$" + value;
+              }
+            }
+          }]
+        },
+        tooltips: {
+          callbacks: {
+            label: function(tooltipItem, data) {
+              return "$" + tooltipItem.yLabel;
+            }
+          }
+        }
+      }
+    });
+  </script>
 	
 	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 	<script src="index.js"></script>

@@ -213,9 +213,9 @@ cursor: pointer;
 border-left: 5px solid #010058af;
 background-color: var(--Border-color);
 }
-.box {
-height: 130px;
-width: 230px;
+/* .box {
+	width: 350px;
+    height: 200px;
 border-radius: 20px;
 box-shadow: 3px 3px 10px rgba(0, 30, 87, 0.751);
 padding: 20px;
@@ -224,10 +224,26 @@ align-items: center;
 justify-content: space-around;
 cursor: pointer;
 transition: transform 0.3s ease-in-out;
-}
-.box:hover {
+} */
+.box {
+    width: 350px;
+    height: 200px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 5px 10px rgba(0, 30, 87, 0.751);
+    transition: transform 0.2s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+  }
+
+/* .box:hover {
 transform: scale(1.08);
-}
+} */
+.box:hover {
+    transform: translateY(-5px);
+  }
 
 .box:nth-child(1) {
 background-color: var(--one-use-color);
@@ -241,23 +257,67 @@ background-color: var(--one-use-color);
 .box:nth-child(4) {
 background-color: var(--two-use-color);
 }
+.box:nth-child(5) {
+	background-color: var(--two-use-color);
+	}
+	.box:nth-child(6) {
+		background-color: var(--one-use-color);
+		}
 
 .box img {
 height: 50px;
 }
-.box .text {
+ .box .text {
 color: white;
-}
+} 
+
+.summary-details-wrapper {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+  }
+  
+  .summary {
+	margin-bottom: 10px;
+  }
+  
+  
 .topic {
 font-size: 13px;
 font-weight: 400;
 letter-spacing: 1px;
 }
 
+.text {
+    text-align: center;
+  }
+
 .topic-heading {
-font-size: 30px;
-letter-spacing: 3px;
-}
+    font-size: 28px;
+    margin-top: 0;
+    margin-bottom: 10px;
+  }
+
+  .details-btn {
+    background-color: #008CBA;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+  }
+
+  .details-btn:hover {
+    background-color: #006F8A;
+  }
+
+  .icon {
+    font-size: 60px;
+    margin-bottom: 20px;
+  }
+ 
 
 .report-container {
 min-height: 300px;
